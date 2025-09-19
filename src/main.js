@@ -1,17 +1,7 @@
-import { Book } from './book.js'
+import { Library } from './library.js'
 
-let books = [
-  new Book('The Hobbit', 'fantasy', 300),
-  new Book('Emma', 'fiction', 500)
-]
+const library = new Library()
+library.addBookToLibrary('The Hobbit', 300)
+library.addBookToLibrary('Emma', 500)
 
-function addNumberOfPages (books) {
-  let sum = 0
-  for (const book of books) {
-    sum += book.numberOfPages
-  }
-  console.log(sum)
-  return sum
-}
-
-addNumberOfPages(books)
+console.log(library.totalPages)
