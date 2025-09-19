@@ -1,0 +1,13 @@
+{
+  "name": "1dv610-lab2",
+  "version": "1.0.0",
+  "description": "Assignment 2 of the course 1DV610 at Linneaus University - Creating a module",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "test"
+  },
+  "author": "Sofia Nord <sj224ds@student.lnu.se>",
+  "license": "MIT"
+}
