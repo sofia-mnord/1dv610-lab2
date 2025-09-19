@@ -27,4 +27,14 @@ export class Library {
   get totalPages () {
     return this.#books.reduce((sum, book) => sum + book.numberOfPages, 0)
   }
+
+  /**
+   * Gets the total number of books in the library.
+   *
+   * @readonly
+   * @memberof Library
+   */
+  get totalBooks () {
+    return this.#books.length
+  }
 }
