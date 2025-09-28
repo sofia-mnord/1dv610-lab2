@@ -37,9 +37,4 @@ export class Library {
   get totalNumberOfBooks () {
     return this.#books.length
   }
-
-  calculateReadingSpeed (pages, time) {
-    const pagesPerHour = pages / time
-    return pagesPerHour
-  }
 }
