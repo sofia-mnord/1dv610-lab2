@@ -12,8 +12,8 @@ export class Library {
    * @param {string} title - The book's title. 
    * @param {number} numberOfPages - The number of pages in the book.
    */
-  addBookToLibrary (title, numberOfPages) {
-    const book = new Book(title, numberOfPages)
+  addBookToLibrary (title, numberOfPages, readingTime) {
+    const book = new Book(title, numberOfPages, readingTime)
 
     this.#books.push(book)
   }
@@ -34,7 +34,12 @@ export class Library {
    * @readonly
    * @memberof Library
    */
-  get totalBooks () {
+  get totalNumberOfBooks () {
     return this.#books.length
+  }
+
+  calculateReadingSpeed (pages, time) {
+    const pagesPerHour = pages / time
+    return pagesPerHour
   }
 }

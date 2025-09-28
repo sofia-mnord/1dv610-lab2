@@ -4,14 +4,16 @@
 export class Book {
   #title
   #numberOfpages
+  #readingTime
   /**
    * Creates an instance of the current class.
    * @param {string} title - The book's title.
    * @param {number} numberOfPages - The number of pages in the book.
    */
-  constructor(title, numberOfPages) {
+  constructor(title, numberOfPages, readingTime) {
     this.#title = title
     this.#numberOfpages = numberOfPages
+    this.#readingTime = readingTime
   }
 
   /**
@@ -23,4 +25,5 @@ export class Book {
   get numberOfPages () {
   return this.#numberOfpages
   }
+
 }
