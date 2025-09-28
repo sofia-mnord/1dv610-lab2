@@ -10,4 +10,5 @@ console.log(library.totalNumberOfBooks)
 
 const book = new Book('Harry Potter', 500, 6)
 
-console.log(book.calculateReadingSpeed())
+console.log(book.calculatePagesReadPerHour() + ' pages per hour.')
+console.log(book.calculateWordsReadPerMinute() + ' words per minute.')

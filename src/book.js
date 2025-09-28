@@ -12,7 +12,7 @@ export class Book {
    * @param {number} readingTime - Number of hours it took to read the book.
    */
   constructor(title, numberOfPages, readingTime) {
-    this.#title = title
+    this.#title = title.trim()
     this.#numberOfpages = numberOfPages
     this.#readingTime = readingTime
   }
@@ -42,10 +42,22 @@ export class Book {
    * 
    * @returns {number} - The average reading speed, expressed in pages per hour.
    */
-  calculateReadingSpeed () {
+  calculatePagesReadPerHour () {
     if (this.#readingTime <= 0) {
       throw new Error('The reading time must be above 0.')
     }
-    return this.#numberOfpages / this.#readingTime
+    return Math.round(this.#numberOfpages / this.#readingTime)
+  }
+
+  /**
+   * Calculate how many words are read per minute.
+   *
+   * @returns {number} - The average reading speed, expressed in words per minute.
+   */
+  calculateWordsReadPerMinute () {
+    const numberOfWords = this.#numberOfpages * 275
+    const minutes = this.#readingTime * 60
+
+    return Math.round(numberOfWords / minutes)
   }
 }
