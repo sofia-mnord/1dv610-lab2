@@ -37,4 +37,17 @@ export class Library {
   get totalNumberOfBooks () {
     return this.#books.length
   }
+
+  /**
+   * Creates an array with all book titles currently in the library.
+   *
+   * @returns - An array of all book titles.
+   */
+  getAllBookTitles () {
+    let bookTitles = []
+    for (const book of this.#books) {
+      bookTitles.push(book.title)
+    }
+    return bookTitles
+  }
 }

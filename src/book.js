@@ -38,6 +38,16 @@ export class Book {
   }
 
   /**
+   * Gets the title of the book.
+   *
+   * @readonly
+   * @memberof Book
+   */
+  get title () {
+    return this.#title
+  }
+
+  /**
    * Calculates how many pages are read per hour.
    * 
    * @returns {number} - The average reading speed, expressed in pages per hour.
