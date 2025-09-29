@@ -29,4 +29,12 @@ export class Author {
   get numberOfBooksWrittenByAuthor () {
     return this.#books.length()
   }
+
+  findBookTitlesWrittenByAuthor () {
+    let bookTitles = []
+    for (const book of this.#books) {
+      bookTitles.push(book.title)
+    }
+    return bookTitles
+  }
 }

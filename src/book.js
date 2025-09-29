@@ -1,4 +1,4 @@
-import { Author } from "./author.js"
+import { validateNumberOfPages, validateReadingTime, validateTitleString } from './validator.js'
 /**
  * Encapsulates the Book class.
  */
@@ -14,28 +14,10 @@ export class Book {
    * @param {number} readingTime - Number of hours it took to read the book.
    */
   constructor(title, numberOfPages, readingTime, author) {
-    if (!title.isString()) {
-      throw new Error('Title must be a string.')
-    }
-    if (title.length === 0) {
-      throw new Error('Title cannot be empty.')
-    }
+    validateTitleString(title)
+    validateNumberOfPages(numberOfPages)
+    validateReadingTime(readingTime)
 
-    if (!numberOfPages.isInteger() || numberOfPages.isNan()) {
-      throw new Error('The number of pages must be a number.')
-    }
-
-    if (numberOfPages <= 0) {
-      throw new Error('The number of pages must be 1 or higher.')
-    }
-
-    if (!readingTime.isInteger() || readingTime.isNan()) {
-      throw new Error('The reading time must be a number.')
-    }
-
-    if (readingTime <= 0) {
-      throw new Error('The reading time must be above 0.')
-    }
     this.#title = title.trim()
     this.#numberOfpages = numberOfPages
     this.#readingTime = readingTime
