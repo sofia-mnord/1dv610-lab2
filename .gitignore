@@ -187,5 +187,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#VSCode Counter Extension
+.VSCodeCounter
 
 # End of https://www.gitignore.io/api/node,linux,macos,windows,visualstudiocode
