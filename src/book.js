@@ -1,3 +1,4 @@
+import { Author } from "./author.js"
 /**
  * Encapsulates the Book class.
  */
@@ -5,13 +6,14 @@ export class Book {
   #title
   #numberOfpages
   #readingTime
+  #author
   /**
    * Creates an instance of the current class.
    * @param {string} title - The book's title.
    * @param {number} numberOfPages - The number of pages in the book.
    * @param {number} readingTime - Number of hours it took to read the book.
    */
-  constructor(title, numberOfPages, readingTime) {
+  constructor(title, numberOfPages, readingTime, author) {
     if (!title.isString()) {
       throw new Error('Title must be a string.')
     }
@@ -37,6 +39,7 @@ export class Book {
     this.#title = title.trim()
     this.#numberOfpages = numberOfPages
     this.#readingTime = readingTime
+    this.#author = author
   }
 
   /**
@@ -67,6 +70,10 @@ export class Book {
    */
   get title () {
     return this.#title
+  }
+
+  get author () {
+    return this.#author
   }
 
   /**
