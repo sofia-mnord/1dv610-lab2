@@ -1,4 +1,4 @@
-import { validateNumberOfPages, validateReadingTime, validateTitleString } from './validator.js'
+
 /**
  * Encapsulates the Book class.
  */
@@ -13,7 +13,7 @@ export class Book {
    * @param {number} numberOfPages - The number of pages in the book.
    * @param {number} readingTime - Number of hours it took to read the book.
    */
-  constructor(title, numberOfPages, readingTime, author) {
+/*   constructor(title, numberOfPages, readingTime, author) {
     validateTitleString(title)
     validateNumberOfPages(numberOfPages)
     validateReadingTime(readingTime)
@@ -22,7 +22,14 @@ export class Book {
     this.#numberOfpages = numberOfPages
     this.#readingTime = readingTime
     this.#author = author
-  }
+  } */
+
+    constructor (builder) {
+      this.#title = builder.title
+      this.#numberOfpages = builder.numberOfPages
+      this.#readingTime = builder.readingTime
+      this.#author = builder.author
+    }
 
   /**
    * Gets the number of pages in the book.

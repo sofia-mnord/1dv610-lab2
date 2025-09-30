@@ -6,15 +6,12 @@ import { Book } from './book.js'
 export class Library {
   #books = []
 
-  /**
-   * Adds a book to the library.
-   * 
-   * @param {string} title - The book's title. 
-   * @param {number} numberOfPages - The number of pages in the book.
-   */
-  addBookToLibrary (title, numberOfPages, readingTime) {
-    const book = new Book(title, numberOfPages, readingTime)
-
+/**
+ * Adds a book to the library.
+ *
+ * @param {object} book - The book that to be added. 
+ */
+  addBookToLibrary (book) {
     this.#books.push(book)
   }
 

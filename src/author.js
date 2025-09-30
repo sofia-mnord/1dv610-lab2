@@ -4,12 +4,12 @@ import { Book } from './book.js'
  */
 export class Author {
   #name
-  #countryOfOrigin
+  #nationality
   #books = []
 
-  constructor (name, countryOfOrigin) {
+  constructor (name, nationality) {
     this.#name = name
-    this.#countryOfOrigin = countryOfOrigin
+    this.#nationality = nationality
   }
 
   get name () {
@@ -17,12 +17,10 @@ export class Author {
   }
 
   get countryOfOrigin () {
-    return this.#countryOfOrigin
+    return this.#nationality
   }
 
-  addBookToAuthor (title, numberOfPages, readingTime) {
-    const book = new Book(title, numberOfPages, readingTime)
-
+  addBookToAuthor (book) {
     this.#books.push(book)
   }
 
