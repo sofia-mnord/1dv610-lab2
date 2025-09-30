@@ -1,31 +1,25 @@
 import { Book } from './book.js'
-import { validateNumberOfPages, validateReadingTime, validateTitleString } from './validator.js'
 
 export class BookBuilder {
-  // title
-  // pages
-  // reading time
-  // author
-  // genre?
   title
-  numberOfpages
+  numberOfPages
   readingTime
   author
 
   setTitle (title) {
-    validateTitleString(title)
+    //validateTitleString(title)
     this.title = title
     return this
   }
 
   setNumberOfPages (numberOfPages) {
-    validateNumberOfPages(numberOfPages)
+    //validateNumberOfPages(numberOfPages)
     this.numberOfpages = numberOfPages
     return this
   }
 
   setReadingTime (readingTime) {
-    validateReadingTime()
+    //validateReadingTime()
     this.readingTime = readingTime
     return this
   }
