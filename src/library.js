@@ -12,11 +12,13 @@ export class Library {
    * @param {string} title - The book's title. 
    * @param {number} numberOfPages - The number of pages in the book.
    */
-  addBookToLibrary (title, numberOfPages, readingTime) {
-    const book = new Book(title, numberOfPages, readingTime)
+  addBookToLibrary (title, numberOfPages, readingTime, author) {
+    const book = new Book(title, numberOfPages, readingTime, author)
 
     this.#books.push(book)
   }
+
+  // TODO: Function for removing book from library.
 
   /**
    * Calculates the total number of pages of all books in the library.
@@ -67,6 +69,7 @@ export class Library {
    * @returns {number} - The average reading speed, expressed in pages per hour
    */
   calculateAverageReadingSpeed () {
+    // TODO: Add validation and throw exception
     return Math.round(this.totalPages / this.totalHours)
   }
 

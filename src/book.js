@@ -54,6 +54,12 @@ export class Book {
     return this.#title
   }
 
+  /**
+   * Gets the author of the book.
+   *
+   * @readonly
+   * @memberof Book
+   */
   get author () {
     return this.#author
   }
@@ -64,9 +70,6 @@ export class Book {
    * @returns {number} - The average reading speed, expressed in pages per hour.
    */
   calculatePagesReadPerHour () {
-    if (this.#readingTime <= 0) {
-      throw new Error('The reading time must be above 0.')
-    }
     return Math.round(this.#numberOfpages / this.#readingTime)
   }
 
