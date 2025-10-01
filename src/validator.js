@@ -4,10 +4,10 @@
  * @param {string} title - The string to validate.
  */
 export function validateTitleString (title) {
-  if (!title.isString()) {
+  if (typeof title !== 'string') {
     throw new Error('Title must be a string.')
   }
-  if (title.length === 0) {
+  if (title.trim().length === 0) {
     throw new Error('Title cannot be empty.')
   }
 }
@@ -18,7 +18,7 @@ export function validateTitleString (title) {
  * @param {number} numberOfPages - The number to validate.
  */
 export function validateNumberOfPages (numberOfPages) {
-  if (!numberOfPages.isInteger() || numberOfPages.isNan()) {
+  if (!Number.isInteger(numberOfPages) || Number.isNaN(numberOfPages)) {
     throw new Error('The number of pages must be a number.')
   }
 
@@ -33,7 +33,7 @@ export function validateNumberOfPages (numberOfPages) {
  * @param {number} readingTime - The number to validate. 
  */
 export function validateReadingTime (readingTime) { 
-  if (!readingTime.isInteger() || readingTime.isNan()) {
+  if (typeof readingTime !== 'number' || Number.isNaN(readingTime)) {
     throw new Error('The reading time must be a number.')
   }
 

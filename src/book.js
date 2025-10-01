@@ -14,9 +14,9 @@ export class Book {
    * @param {number} readingTime - Number of hours it took to read the book.
    */
   constructor(title, numberOfPages, readingTime, author) {
-/*     validateTitleString(title)
+    validateTitleString(title)
     validateNumberOfPages(numberOfPages)
-    validateReadingTime(readingTime) */
+    validateReadingTime(readingTime)
 
     this.#title = title.trim()
     this.#numberOfpages = numberOfPages
