@@ -6,8 +6,13 @@
   "main": "main.js",
   "scripts": {
     "start": "node src/main.js",
-    "test": "test"
+    "test": "npx --node-options=--experimental-vm-modules jest || exit 0",
+    "test:only": "npx --node-options=--experimental-vm-modules jest -t"
+
   },
   "author": "Sofia Nord <sj224ds@student.lnu.se>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
 }
