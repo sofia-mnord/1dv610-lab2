@@ -12,8 +12,8 @@ export class Library {
    * @param {string} title - The book's title. 
    * @param {number} numberOfPages - The number of pages in the book.
    */
-  addBookToLibrary (title, readingTime, author) {
-    const book = new Book(title, readingTime, author)
+  addBookToLibrary (title, author) {
+    const book = new Book(title, author)
 
     this.#books.push(book)
 
@@ -44,6 +44,10 @@ export class Library {
    */
   get totalHours () {
     return this.#books.reduce((sum, book) => sum + book.readingTime, 0)
+  }
+
+  setReadingTime (book, hours) {
+    book.setReadingTime(hours)
   }
 
   /**
