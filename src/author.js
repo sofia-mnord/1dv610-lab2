@@ -8,6 +8,7 @@ export class Author {
   #books = []
 
   constructor (name, countryOfOrigin) {
+    // TODO: Add validation
     this.#name = name
     this.#countryOfOrigin = countryOfOrigin
   }
@@ -27,7 +28,7 @@ export class Author {
   }
 
   get numberOfBooksWrittenByAuthor () {
-    return this.#books.length()
+    return this.#books.length
   }
 
   findBookTitlesWrittenByAuthor () {

@@ -12,10 +12,12 @@ export class Library {
    * @param {string} title - The book's title. 
    * @param {number} numberOfPages - The number of pages in the book.
    */
-  addBookToLibrary (title, numberOfPages, readingTime, author) {
-    const book = new Book(title, numberOfPages, readingTime, author)
+  addBookToLibrary (title, readingTime, author) {
+    const book = new Book(title, readingTime, author)
 
     this.#books.push(book)
+
+    return book
   }
 
   // TODO: Function for removing book from library.
@@ -28,6 +30,10 @@ export class Library {
    */
   get totalPages () {
     return this.#books.reduce((sum, book) => sum + book.numberOfPages, 0)
+  }
+
+  setBookPages (book, pages) {
+    book.setnumberOfPages(pages)
   }
 
   /**
@@ -79,7 +85,7 @@ export class Library {
    * @returns {number} - The average reading speed, expressed in words per minute.
    */
   calculateAverageWordsPerMinute () {
-    const words = this.totalPages * 275
+    const words = this.totalPages * 275 // clarify what 275 is
     const minutes = this.totalHours * 60
 
     return Math.round(words / minutes)

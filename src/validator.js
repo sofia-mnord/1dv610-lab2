@@ -19,8 +19,10 @@ export function validateTitleString (title) {
  */
 export function validateNumberOfPages (numberOfPages) {
   if (!Number.isInteger(numberOfPages) || Number.isNaN(numberOfPages)) {
-    throw new Error('The number of pages must be a number.')
+    throw new Error('The number of pages must be an integer.') 
   }
+
+  // TODO: Check if NaN is considered an integer, otherwise remove.
 
   if (numberOfPages <= 0) {
     throw new Error('The number of pages must be 1 or higher.')

@@ -10,16 +10,16 @@ export class Book {
   /**
    * Creates an instance of the current class.
    * @param {string} title - The book's title.
-   * @param {number} numberOfPages - The number of pages in the book.
    * @param {number} readingTime - Number of hours it took to read the book.
    */
-  constructor(title, numberOfPages, readingTime, author) {
+  constructor(title, readingTime, author) {
     validateTitleString(title)
-    validateNumberOfPages(numberOfPages)
+    
     validateReadingTime(readingTime)
+    // TODO: validate author
 
     this.#title = title.trim()
-    this.#numberOfpages = numberOfPages
+    
     this.#readingTime = readingTime
     this.#author = author
   }
@@ -32,6 +32,11 @@ export class Book {
    */
   get numberOfPages () {
     return this.#numberOfpages
+  }
+
+  setnumberOfPages (numberOfPages) {
+    validateNumberOfPages(numberOfPages)
+    this.#numberOfpages = numberOfPages
   }
 
   /**
