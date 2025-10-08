@@ -46,9 +46,9 @@ export class Book {
     return this.#readingTime
   }
 
-  setReadingTime (readingTime) {
-    validateReadingTime(readingTime)
-    this.#readingTime = readingTime
+  setReadingTime (readingTimeInHours) {
+    validateReadingTime(readingTimeInHours)
+    this.#readingTime = readingTimeInHours
   }
 
   /**
@@ -90,6 +90,10 @@ export class Book {
     const minutes = this.#readingTime * 60
 
     return Math.round(numberOfWords / minutes)
+  }
+
+  toString () {
+    return `${this.#title}`
   }
 }
 

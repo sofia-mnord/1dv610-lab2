@@ -21,6 +21,12 @@ export class Library {
   }
 
   // TODO: Function for removing book from library.
+  removeBookFromLibrary (bookToRemove) {
+    const indexOfBookToRemove = this.#books.findIndex((book) => book === bookToRemove)
+    const removedBook = this.#books.splice(indexOfBookToRemove, 1)
+
+    return removedBook
+  }
 
   /**
    * Calculates the total number of pages of all books in the library.

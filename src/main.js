@@ -22,3 +22,6 @@ book.setReadingTime(7)
 
 console.log(book.calculatePagesReadPerHour() + ' pages per hour.')
 console.log(book.calculateWordsReadPerMinute() + ' words per minute.')
+
+console.log(library.removeBookFromLibrary(hobbit) + ' was deleted.')
+console.log(library.getAllBookTitles())
