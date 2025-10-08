@@ -27,6 +27,8 @@ export class Author {
     this.#books.push(book)
   }
 
+  // TODO: Add function for removing book
+
   get numberOfBooksWrittenByAuthor () {
     return this.#books.length
   }

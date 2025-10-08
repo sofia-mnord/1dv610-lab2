@@ -20,12 +20,18 @@ export class Library {
     return book
   }
 
-  // TODO: Function for removing book from library.
-  removeBookFromLibrary (bookToRemove) {
-    const indexOfBookToRemove = this.#books.findIndex((book) => book === bookToRemove)
-    const removedBook = this.#books.splice(indexOfBookToRemove, 1)
 
-    return removedBook
+  /**
+   * Deletes the specified book from the library.
+   * @param {object} bookToDelete
+   * @returns {object} - The deleted book.
+   */
+  deleteBook (bookToDelete) {
+    const indexOfBookToDelete = this.#books.findIndex((book) => book === bookToDelete)
+    if (indexOfBookToDelete === -1) {
+      throw new Error('The book was not found.')
+    }
+    return this.#books.splice(indexOfBookToDelete, 1)
   }
 
   /**
@@ -54,6 +60,10 @@ export class Library {
 
   setReadingTime (book, hours) {
     book.setReadingTime(hours)
+  }
+
+  setAuthor (book, author) {
+    book.setAuthor(author)
   }
 
   /**

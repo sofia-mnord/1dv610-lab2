@@ -1,4 +1,5 @@
 import { validateNumberOfPages, validateReadingTime, validateTitleString } from './validator.js'
+import { Author } from './author.js'
 /**
  * Encapsulates the Book class.
  */
@@ -11,14 +12,9 @@ export class Book {
    * Creates an instance of the current class.
    * @param {string} title - The book's title.
    */
-  constructor(title, author) {
+  constructor(title) {
     validateTitleString(title)
-    
-
-    // TODO: validate author
-
     this.#title = title.trim()
-    this.#author = author
   }
 
   /**
@@ -69,6 +65,13 @@ export class Book {
    */
   get author () {
     return this.#author
+  }
+
+  setAuthor (author) {
+    if (!(author instanceof Author)) {
+      throw new Error('The author needs to be an instance of the Author class.')
+    }
+      this.#author = author
   }
 
   /**
