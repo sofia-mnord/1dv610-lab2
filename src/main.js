@@ -18,7 +18,7 @@ console.log(library.totalPages)
 console.log(library.totalNumberOfBooks)
 console.log(library.getAllBookTitles())
 console.log(library.calculateAverageReadingSpeed())
-console.log('Average wpm: ' + library.calculateAverageWordsPerMinute())
+console.log('Average wpm: ' + library.calculateAverageWordsPerMinute(300))
 
 const book = new Book('Harry Potter')
 

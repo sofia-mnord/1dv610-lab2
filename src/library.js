@@ -102,10 +102,11 @@ export class Library {
   /**
    * Calculates the average reading speed based on all books in the library.
    *
+   * @param {number} [wordsPerPage = 275] - The number of words per page, 275 as default.
    * @returns {number} - The average reading speed, expressed in words per minute.
    */
-  calculateAverageWordsPerMinute () {
-    const words = this.totalPages * 275 // clarify what 275 is
+  calculateAverageWordsPerMinute (wordsPerPage = 275) {
+    const words = this.totalPages * wordsPerPage
     const minutes = this.totalHours * 60
 
     return Math.round(words / minutes)
