@@ -1,29 +1,32 @@
 import { Book } from './book.js'
+import { validateString } from './validator.js'
 /**
  * Encapsulates the Author class.
  */
 export class Author {
   #name
-  #countryOfOrigin
+  #nationality
   #books = []
 
-  constructor (name, countryOfOrigin) {
-    // TODO: Add validation
+  constructor (name, nationality) {
+    validateString(name)
     this.#name = name
-    this.#countryOfOrigin = countryOfOrigin
+    validateString(nationality)
+    this.#nationality = nationality
   }
 
   get name () {
     return this.#name
   }
 
-  get countryOfOrigin () {
-    return this.#countryOfOrigin
+  get nationality () {
+    return this.#nationality
   }
 
-  addBookToAuthor (title, numberOfPages, readingTime) {
-    const book = new Book(title, numberOfPages, readingTime)
-
+  addBook (book) {
+   if (!(book instanceof Book)) {
+      throw new Error('Invalid book object.')
+    }
     this.#books.push(book)
   }
 
@@ -34,10 +37,7 @@ export class Author {
   }
 
   findBookTitlesWrittenByAuthor () {
-    let bookTitles = []
-    for (const book of this.#books) {
-      bookTitles.push(book.title)
-    }
-    return bookTitles
+    const books = this.#books.map(book => book.title)
+    return books
   }
 }

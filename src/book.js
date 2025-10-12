@@ -10,7 +10,7 @@ export class Book {
   #author
 
   constructor(title) {
-    validateTitleString(title)
+    validateString(title)
     this.#title = title.trim()
   }
 

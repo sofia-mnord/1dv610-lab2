@@ -23,6 +23,7 @@ export class Library {
 
   /**
    * Deletes the specified book from the library.
+   *
    * @param {object} bookToDelete
    * @returns {object} - The deleted book.
    */
