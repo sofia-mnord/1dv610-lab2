@@ -114,13 +114,24 @@ export class Library {
   }
 
   /**
-   * Estimates the time it would take to read a book, based on the number of pages.
+   * Estimates how many hours it would take to read a book, based on the number of pages.
    * @param {number} numberOfPages - How many pages are in the book.
    * @returns {number} - The number of hoursit would take to read the book.
    */
   estimateReadingTimeForBook (numberOfPages) {
     validateNumberOfPages(numberOfPages)
     const averageReadingSpeed = this.calculateAverageReadingSpeed()
-    return Math.round(numberOfPages / averageReadingSpeed)
+    return (numberOfPages / averageReadingSpeed).toFixed(1)
   }
+
+  // TODO: method for finding the longest book
+  findLongestBook () {
+    
+  }
+
+  // TODO: method for finding the shortest book
+
+  // TODO: method for average book length
+
+  // TODO: toString-method for Library?
 }

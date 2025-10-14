@@ -59,4 +59,5 @@ export class Author {
   hasBook (book) {
     return this.#books.includes(book)
   }
+
 }
