@@ -156,7 +156,19 @@ export class Library {
     return shortestBook
   }
 
-  // TODO: method for average book length
-
-  // TODO: toString-method for Library?
+ /**
+  * Prints information about the library.
+  *
+  * @returns {string} - The library report.
+  */
+  toString () {
+    return `
+      Total books: ${this.totalNumberOfBooks}
+      Total pages: ${this.totalPages}
+      Average speed: ${this.calculateAverageReadingSpeed()} pages per hour.
+      Average WPM: ${this.calculateAverageWordsPerMinute()} words per minute.
+      Longest book: ${this.findLongestBook()}
+      Shortest book: ${this.findShortestBook()}
+    `
+  }
 }

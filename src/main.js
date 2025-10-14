@@ -33,3 +33,4 @@ console.log(library.getAllBookTitles())
 console.log('It would take ' + library.estimateReadingTimeForBook(408) + ' hours to read this book.')
 
 console.log(library.findLongestBook() + ' is the longest book, with ' + library.findLongestBook().numberOfPages + ' pages.')
+console.log(library.toString())
