@@ -25,16 +25,18 @@ export class Author {
 
   addBook (book) {
    if (!(book instanceof Book)) {
-      throw new Error('Invalid book object.')
+      throw new Error('The book needs to be an instance of the Book class.')
     }
-    // check if array already contains book
+  
     if (!this.#books.includes(book)) {
       this.#books.push(book)
+    } else {
+      throw new Error('This book is already added to this author.')
     }
-
-    // set book's author to this
-    // check if author already is this
-    book.setAuthor(this)
+  
+    if (book.author !== this) {
+      book.setAuthor(this)
+    } 
   }
 
   // TODO: Add function for removing book
