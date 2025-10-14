@@ -42,3 +42,12 @@ export function validateReadingTime (readingTime) {
   }
 }
 
+export function validateArray (array) {
+  if (!Array.isArray(array)) {
+    throw new Error('The argument is not an array.')
+  }
+
+  if (array.length === 0) {
+    throw new Error('There are no books in the array.')
+  }
+}

@@ -1,5 +1,5 @@
 import { Book } from './book.js'
-import { validateNumberOfPages } from './validator.js'
+import { validateNumberOfPages, validateArray } from './validator.js'
 
 /**
  * Encapsulates the Library class.
@@ -130,9 +130,7 @@ export class Library {
   * @returns {object} - The longest book.
   */
   findLongestBook () {
-    if (this.#books.length === 0) {
-      throw new Error('There are no books in the library.')
-    }
+    validateArray(this.#books)
     let longestBook = this.#books[0]
     this.#books.forEach((book) => {
       if (longestBook.numberOfPages < book.numberOfPages) {
@@ -148,6 +146,7 @@ export class Library {
  * @returns {object} - The shortest book.
  */
   findShortestBook () {
+    validateArray(this.#books)
     let shortestBook = this.#books[0]
     this.#books.forEach((book) => {
       if (shortestBook.numberOfPages > book.numberOfPages) {
