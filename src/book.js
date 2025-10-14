@@ -45,8 +45,10 @@ export class Book {
       throw new Error('The author needs to be an instance of the Author class.')
     }
       this.#author = author
-      // add book to author's array
-      // check if array already contains it
+
+      if (!author.hasBook(this)) {
+        author.addBook(this)
+      }
   }
 
   calculatePagesReadPerHour () {
