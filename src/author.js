@@ -28,7 +28,7 @@ export class Author {
       throw new Error('The book needs to be an instance of the Book class.')
     }
   
-    if (!this.#books.includes(book)) {
+    if (!this.hasBook(book)) {
       this.#books.push(book)
     } else {
       throw new Error('This book is already added to this author.')
@@ -48,5 +48,9 @@ export class Author {
   findBookTitlesWrittenByAuthor () {
     const books = this.#books.map(book => book.title)
     return books
+  }
+
+  hasBook (book) {
+    return this.#books.includes(book)
   }
 }
