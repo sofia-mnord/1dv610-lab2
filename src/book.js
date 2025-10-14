@@ -1,4 +1,4 @@
-import { validateNumberOfPages, validateReadingTime, validateTitleString } from './validator.js'
+import { validateNumberOfPages, validateReadingTime, validateString } from './validator.js'
 import { Author } from './author.js'
 /**
  * Encapsulates the Book class.

@@ -1,4 +1,5 @@
 import { Book } from './book.js'
+import { validateNumberOfPages } from './validator.js'
 
 /**
  * Encapsulates the Library class.
@@ -96,7 +97,6 @@ export class Library {
    * @returns {number} - The average reading speed, expressed in pages per hour
    */
   calculateAverageReadingSpeed () {
-    // TODO: Add validation and throw exception
     return Math.round(this.totalPages / this.totalHours)
   }
 
@@ -111,5 +111,16 @@ export class Library {
     const minutes = this.totalHours * 60
 
     return Math.round(words / minutes)
+  }
+
+  /**
+   * Estimates the time it would take to read a book, based on the number of pages.
+   * @param {number} numberOfPages - How many pages are in the book.
+   * @returns {number} - The number of hoursit would take to read the book.
+   */
+  estimateReadingTimeForBook (numberOfPages) {
+    validateNumberOfPages(numberOfPages)
+    const averageReadingSpeed = this.calculateAverageReadingSpeed()
+    return Math.round(numberOfPages / averageReadingSpeed)
   }
 }
