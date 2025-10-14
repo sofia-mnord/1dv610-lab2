@@ -39,7 +39,13 @@ export class Author {
     } 
   }
 
-  // TODO: Add function for removing book
+  deleteBook (bookToDelete) {
+    const indexOfBookToDelete = this.#books.findIndex((book) => book === bookToDelete)
+    if (indexOfBookToDelete === -1) {
+      throw new Error('The book was not found.')
+    }
+    return this.#books.splice(indexOfBookToDelete, 1)
+  }
 
   get numberOfBooksWrittenByAuthor () {
     return this.#books.length
