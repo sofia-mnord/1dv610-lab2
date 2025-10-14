@@ -142,7 +142,20 @@ export class Library {
     return longestBook
   }
 
-  // TODO: method for finding the shortest book
+/**
+ * Finds the book with the least number of pages in the library.
+ *
+ * @returns {object} - The shortest book.
+ */
+  findShortestBook () {
+    let shortestBook = this.#books[0]
+    this.#books.forEach((book) => {
+      if (shortestBook.numberOfPages > book.numberOfPages) {
+        shortestBook = book
+      }
+    })
+    return shortestBook
+  }
 
   // TODO: method for average book length
 

@@ -41,3 +41,4 @@ export function validateReadingTime (readingTime) {
     throw new Error('The reading time must be above 0.')
   }
 }
+
