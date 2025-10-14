@@ -28,7 +28,8 @@ book.setReadingTime(7)
 console.log(book.calculatePagesReadPerHour() + ' pages per hour.')
 console.log(book.calculateWordsReadPerMinute() + ' words per minute.')
 
-console.log(library.deleteBook(hobbit) + ' was deleted.')
 console.log(library.getAllBookTitles())
 
 console.log('It would take ' + library.estimateReadingTimeForBook(408) + ' hours to read this book.')
+
+console.log(library.findLongestBook() + ' is the longest book, with ' + library.findLongestBook().numberOfPages + ' pages.')

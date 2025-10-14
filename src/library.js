@@ -116,7 +116,7 @@ export class Library {
   /**
    * Estimates how many hours it would take to read a book, based on the number of pages.
    * @param {number} numberOfPages - How many pages are in the book.
-   * @returns {number} - The number of hoursit would take to read the book.
+   * @returns {number} - The number of hours it would take to read the book.
    */
   estimateReadingTimeForBook (numberOfPages) {
     validateNumberOfPages(numberOfPages)
@@ -124,9 +124,22 @@ export class Library {
     return (numberOfPages / averageReadingSpeed).toFixed(1)
   }
 
-  // TODO: method for finding the longest book
+ /**
+  * Finds the book with most number of pages in the library.
+  *
+  * @returns {object} - The longest book.
+  */
   findLongestBook () {
-    
+    if (this.#books.length === 0) {
+      throw new Error('There are no books in the library.')
+    }
+    let longestBook = this.#books[0]
+    this.#books.forEach((book) => {
+      if (longestBook.numberOfPages < book.numberOfPages) {
+        longestBook = book
+      }
+    })
+    return longestBook
   }
 
   // TODO: method for finding the shortest book
