@@ -11,10 +11,9 @@ export class Library {
    * Adds a book to the library.
    * 
    * @param {string} title - The book's title. 
-   * @param {number} numberOfPages - The number of pages in the book.
    */
-  addBookToLibrary (title, author) {
-    const book = new Book(title, author)
+  addBookToLibrary (title) {
+    const book = new Book(title)
 
     if (!this.#books.includes(book)) {
       this.#books.push(book)
@@ -89,7 +88,14 @@ export class Library {
     book.setReadingTime(hours)
   }
 
-  setAuthor (book, author) {
+  /**
+   * Sets the author of a book.
+   *
+   * @param {string} title - The book's title.
+   * @param {object} author - The book's author.
+   */
+  setAuthor (title, author) {
+    const book = this.#findBookByTitle(title)
     book.setAuthor(author)
   }
 

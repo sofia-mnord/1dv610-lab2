@@ -1,18 +1,19 @@
 import { Library } from '../src/library.js'
+import { Author } from '../src/author.js'
 
 // addBooksToLibrary
 describe('Library Public Interface', () => {
 
   test('array should contain one element.', () => {
     const library = new Library()
-    library.addBookToLibrary('Persuasion', 'Jane Austen')
+    library.addBookToLibrary('Persuasion')
     expect(library.totalNumberOfBooks).toBe(1)
   })
 
   // deleteBook
   test('array should contain zero elements.', () => {
     const library = new Library()
-    library.addBookToLibrary('Persuasion', 'Jane Austen')
+    library.addBookToLibrary('Persuasion')
     library.deleteBook('Persuasion')
     expect(library.totalNumberOfBooks).toBe(0)
   })
@@ -20,9 +21,9 @@ describe('Library Public Interface', () => {
   // setBookPages
   test('should return total number of pages', () => {
     const library = new Library()
-    library.addBookToLibrary('Persuasion', 'Jane Austen')
+    library.addBookToLibrary('Persuasion')
     library.setBookPages('Persuasion', 288)
-    library.addBookToLibrary('Emma', 'Jane Austen')
+    library.addBookToLibrary('Emma')
     library.setBookPages('Emma', 500)
     
     expect(library.totalPages).toBe(788)
@@ -31,20 +32,32 @@ describe('Library Public Interface', () => {
   // setReadingTime
   test('should return total number of hours', () => {
     const library = new Library()
-    library.addBookToLibrary('Persuasion', 'Jane Austen')
+    library.addBookToLibrary('Persuasion')
     library.setReadingTime('Persuasion', 5)
-    library.addBookToLibrary('Emma', 'Jane Austen')
+    library.addBookToLibrary('Emma')
     library.setReadingTime('Emma', 7.5)
     
     expect(library.totalHours).toBe(12.5)
   })
 
+  // setAuthor
+    test('should set the author', () => {
+    const library = new Library()
+    const book = library.addBookToLibrary('Persuasion')
+    const author = new Author('Jane Austen', 'british')
+    library.setAuthor('Persuasion', author)
+    
+    expect(book.author).toBe(author)
+  })
+
+  // totalNumberOfBooks
+
 })
 
 
-// setAuthor
 
-// totalNumberOfBooks
+
+
 
 // getAllBookTitles
 
