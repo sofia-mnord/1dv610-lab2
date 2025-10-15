@@ -17,7 +17,7 @@ describe('Library Public Interface', () => {
     expect(library.totalNumberOfBooks).toBe(0)
   })
 
-  // totalpages
+  // setBookPages
   test('should return total number of pages', () => {
     const library = new Library()
     library.addBookToLibrary('Persuasion', 'Jane Austen')
@@ -28,14 +28,10 @@ describe('Library Public Interface', () => {
     expect(library.totalPages).toBe(788)
   })
 
+  // setReadingTime
+
 })
 
-
-
-
-// totalHours
-
-// setReadingTime
 
 // setAuthor
 

@@ -48,13 +48,24 @@ export class Library {
     return this.#books.reduce((sum, book) => sum + book.numberOfPages, 0)
   }
 
+  /**
+   * Sets the number of pages in a book.
+   *
+   * @param {string} title - The book's title.
+   * @param {number} pages - How many pages the book has.
+   */
   setBookPages (title, pages) {
-    let book = this.#books.find(book => book.title === title)
-      if (book === undefined) {
-        throw new Error('Could not find book.')
-      } else {
-        book.setNumberOfPages(pages)
-      }
+    const book = this.#findBookByTitle(title)
+    book.setNumberOfPages(pages)
+  }
+
+  #findBookByTitle (title) {
+    const book = this.#books.find(book => book.title === title)
+    if (book === undefined) {
+      throw new Error('Could not find book.')
+    } else {
+      return book
+    }
   }
 
   /**
