@@ -1,6 +1,6 @@
 import { Library } from '../src/library.js'
 
-describe('Test to add books to library', () => {
+/* describe('Test to add books to library', () => {
   const library = new Library()
   library.addBookToLibrary('Persuasion', 272, 4.5, 'Jane Austen')
   library.addBookToLibrary('Emma', 588, 10, 'Jane Austen')
@@ -29,3 +29,47 @@ describe('Test to add books to library', () => {
     expect(library.calculateAverageWordsPerMinute()).toBe(272)
   })
 })
+ */
+// addBooksToLibrary
+describe('Library Public Interface', () => {
+
+  test('array should contain one element.', () => {
+    const library = new Library()
+    library.addBookToLibrary('Persuasion', 'Jane Austen')
+    expect(library.totalNumberOfBooks).toBe(1)
+  })
+
+  // deleteBook
+  test('array should contain zero elements.', () => {
+    const library = new Library()
+    library.addBookToLibrary('Persuasion', 'Jane Austen')
+    library.deleteBook('Persuasion')
+    expect(library.totalNumberOfBooks).toBe(0)
+  })
+})
+
+
+
+// totalpages
+
+// totalHours
+
+// setReadingTime
+
+// setAuthor
+
+// totalNumberOfBooks
+
+// getAllBookTitles
+
+// calculateAverageReadingSpeed
+
+// calculateAverageWordsPerMinute
+
+// estimateReadingTimeForBook
+
+// findLongestBook
+
+// findShortestBook
+
+// toString

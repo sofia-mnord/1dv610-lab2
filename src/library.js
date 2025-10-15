@@ -16,7 +16,9 @@ export class Library {
   addBookToLibrary (title, author) {
     const book = new Book(title, author)
 
-    this.#books.push(book)
+    if (!this.#books.includes(book)) {
+      this.#books.push(book)
+    }
 
     return book
   }
@@ -25,11 +27,11 @@ export class Library {
   /**
    * Deletes the specified book from the library.
    *
-   * @param {object} bookToDelete
+   * @param {object} titleOfBook
    * @returns {object} - The deleted book.
    */
-  deleteBook (bookToDelete) {
-    const indexOfBookToDelete = this.#books.findIndex((book) => book === bookToDelete)
+  deleteBook (titleOfBook) {
+    const indexOfBookToDelete = this.#books.findIndex((book) => book.title === titleOfBook)
     if (indexOfBookToDelete === -1) {
       throw new Error('The book was not found.')
     }
