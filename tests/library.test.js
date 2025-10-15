@@ -29,6 +29,15 @@ describe('Library Public Interface', () => {
   })
 
   // setReadingTime
+  test('should return total number of hours', () => {
+    const library = new Library()
+    library.addBookToLibrary('Persuasion', 'Jane Austen')
+    library.setReadingTime('Persuasion', 5)
+    library.addBookToLibrary('Emma', 'Jane Austen')
+    library.setReadingTime('Emma', 7.5)
+    
+    expect(library.totalHours).toBe(12.5)
+  })
 
 })
 

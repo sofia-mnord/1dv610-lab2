@@ -78,7 +78,14 @@ export class Library {
     return this.#books.reduce((sum, book) => sum + book.readingTime, 0)
   }
 
-  setReadingTime (book, hours) {
+  /**
+   * Sets how long time it took to read the book.
+   *
+   * @param {string} title - The book's title
+   * @param {number} hours - How many hours it took to read the book.
+   */
+  setReadingTime (title, hours) {
+    const book = this.#findBookByTitle(title)
     book.setReadingTime(hours)
   }
 
