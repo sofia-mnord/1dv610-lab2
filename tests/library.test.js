@@ -48,6 +48,7 @@ describe('Library Public Interface', () => {
     library.setAuthor('Persuasion', author)
     
     expect(book.author).toBe(author)
+    expect(author.findBookTitlesWrittenByAuthor()).toStrictEqual(["Persuasion"])
   })
 
   // getAllBookTitles
@@ -73,7 +74,7 @@ describe('Library Public Interface', () => {
    })
 
    // calculateAverageWordsPerMinute
-    test('should return taverage words read per minute', () => {
+    test('should return average words read per minute', () => {
       const library = new Library()
       library.addBookToLibrary('Persuasion')
       library.setReadingTime('Persuasion', 5)
@@ -97,6 +98,29 @@ describe('Library Public Interface', () => {
       
       expect(library.estimateReadingTimeForBook(600)).toBe(9.5)
    })
+
+   // findLongestBook
+    test('should return the longest book', () => {
+      const library = new Library()
+      library.addBookToLibrary('Persuasion')
+      library.setBookPages('Persuasion', 288)
+      library.addBookToLibrary('Emma')
+      library.setBookPages('Emma', 500)
+      
+      expect(library.findLongestBook()).toBe('Emma')
+    })
+
+    // findShortestBook
+    test('should return the shortest book', () => {
+      const library = new Library()
+      library.addBookToLibrary('Persuasion')
+      library.setBookPages('Persuasion', 288)
+      library.addBookToLibrary('Emma')
+      library.setBookPages('Emma', 500)
+      
+      expect(library.findShortestBook()).toBe('Persuasion')
+    })
+
 })
 
 
@@ -104,8 +128,8 @@ describe('Library Public Interface', () => {
 
 
 
-// findLongestBook
 
-// findShortestBook
+
+
 
 // toString

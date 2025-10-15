@@ -168,7 +168,7 @@ export class Library {
         longestBook = book
       }
     })
-    return longestBook
+    return longestBook.toString()
   }
 
 /**
@@ -184,7 +184,7 @@ export class Library {
         shortestBook = book
       }
     })
-    return shortestBook
+    return shortestBook.toString()
   }
 
  /**
