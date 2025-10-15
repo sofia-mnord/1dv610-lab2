@@ -84,13 +84,25 @@ describe('Library Public Interface', () => {
       
       expect(library.calculateAverageWordsPerMinute()).toBe(289)
    })
+
+    // estimateReadingTimeForBook 
+    test('should return hours it would take to read', () => {
+      const library = new Library()
+      library.addBookToLibrary('Persuasion')
+      library.setReadingTime('Persuasion', 5)
+      library.setBookPages('Persuasion', 288)
+      library.addBookToLibrary('Emma')
+      library.setReadingTime('Emma', 7.5)
+      library.setBookPages('Emma', 500)
+      
+      expect(library.estimateReadingTimeForBook(600)).toBe(9.5)
+   })
 })
 
 
 
 
 
-// estimateReadingTimeForBook
 
 // findLongestBook
 

@@ -152,7 +152,7 @@ export class Library {
   estimateReadingTimeForBook (numberOfPages) {
     validateNumberOfPages(numberOfPages)
     const averageReadingSpeed = this.calculateAverageReadingSpeed()
-    return (numberOfPages / averageReadingSpeed).toFixed(1)
+    return Number((numberOfPages / averageReadingSpeed).toFixed(1))
   }
 
  /**
