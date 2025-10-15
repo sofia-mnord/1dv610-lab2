@@ -18,7 +18,7 @@ export class Book {
     return this.#numberOfpages
   }
 
-  setnumberOfPages (numberOfPages) {
+  setNumberOfPages (numberOfPages) {
     validateNumberOfPages(numberOfPages)
     this.#numberOfpages = numberOfPages
   }

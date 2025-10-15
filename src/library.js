@@ -48,8 +48,13 @@ export class Library {
     return this.#books.reduce((sum, book) => sum + book.numberOfPages, 0)
   }
 
-  setBookPages (book, pages) {
-    book.setnumberOfPages(pages)
+  setBookPages (title, pages) {
+    let book = this.#books.find(book => book.title === title)
+      if (book === undefined) {
+        throw new Error('Could not find book.')
+      } else {
+        book.setNumberOfPages(pages)
+      }
   }
 
   /**
