@@ -50,20 +50,45 @@ describe('Library Public Interface', () => {
     expect(book.author).toBe(author)
   })
 
-  // totalNumberOfBooks
+  // getAllBookTitles
+    test('should return an array of the books in the library', () => {
+      const library = new Library()
+      library.addBookToLibrary('Persuasion')
+      library.addBookToLibrary('Emma')
 
+      expect(library.getAllBookTitles()).toStrictEqual(["Persuasion", "Emma"])
+    })
+
+    // calculateAverageReadingSpeed
+    test('should return average reading speed', () => {
+      const library = new Library()
+      library.addBookToLibrary('Persuasion')
+      library.setReadingTime('Persuasion', 5)
+      library.setBookPages('Persuasion', 288)
+      library.addBookToLibrary('Emma')
+      library.setReadingTime('Emma', 7.5)
+      library.setBookPages('Emma', 500)
+      
+      expect(library.calculateAverageReadingSpeed()).toBe(63)
+   })
+
+   // calculateAverageWordsPerMinute
+    test('should return taverage words read per minute', () => {
+      const library = new Library()
+      library.addBookToLibrary('Persuasion')
+      library.setReadingTime('Persuasion', 5)
+      library.setBookPages('Persuasion', 288)
+      library.addBookToLibrary('Emma')
+      library.setReadingTime('Emma', 7.5)
+      library.setBookPages('Emma', 500)
+      
+      expect(library.calculateAverageWordsPerMinute()).toBe(289)
+   })
 })
 
 
 
 
-
-
-// getAllBookTitles
-
-// calculateAverageReadingSpeed
-
-// calculateAverageWordsPerMinute
 
 // estimateReadingTimeForBook
 
