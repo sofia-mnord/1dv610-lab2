@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node src/main.js",
-    "test": "npx --node-options=--experimental-vm-modules jest || exit 0",
+    "test": "npx --node-options=--experimental-vm-modules jest --verbose || exit 0",
     "test:only": "npx --node-options=--experimental-vm-modules jest -t"
 
   },
