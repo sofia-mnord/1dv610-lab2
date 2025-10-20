@@ -53,3 +53,11 @@ myLibrary.findShortestBook()
 ```javascript
 console.log(myLibrary.toString())
 ```
+## Testing
+Automatic tests are available for the public interface.
+To run tests:
+```bash
+npm test
+``` 
+## License
+MIT
